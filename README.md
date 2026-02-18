@@ -1,5 +1,7 @@
 # pi-notify-desktop
 
+[![CI](https://github.com/rbright/pi-notify-desktop/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/rbright/pi-notify-desktop/actions/workflows/ci.yml)
+
 `pi-notify-desktop` sends terminal OSC notifications when the [Pi agent](https://github.com/badlogic/pi-mono) finishes a turn and is waiting for your next input.
 
 ## Install into Pi (GitHub)
