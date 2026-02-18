@@ -4,6 +4,8 @@
 
 `pi-notify-desktop` sends terminal OSC notifications when the [Pi agent](https://github.com/badlogic/pi-mono) finishes a turn and is waiting for your next input.
 
+npm package: `@rbright/pi-notify-desktop`
+
 ## Install into Pi (GitHub)
 
 Global install:
@@ -16,6 +18,13 @@ Project-local install (writes to `.pi/settings.json` in the current repo):
 
 ```bash
 pi install -l git:github.com/rbright/pi-notify-desktop
+```
+
+After publishing to npm, you can also install from npm:
+
+```bash
+pi install npm:@rbright/pi-notify-desktop
+pi install -l npm:@rbright/pi-notify-desktop
 ```
 
 If Pi is already running, reload extensions:
@@ -83,3 +92,19 @@ Run the extension directly during local development:
 bun install
 pi --no-extensions -e ./src/index.ts
 ```
+
+## Publishing (npm)
+
+Manual publish (`@rbright/pi-notify-desktop`):
+
+```bash
+bun run check
+npm publish --access public
+```
+
+Automated publish is available via GitHub Actions (`.github/workflows/publish.yml`) and runs on:
+- `workflow_dispatch`
+- tag pushes matching `v*`
+
+Required repository secret:
+- `NPM_TOKEN` (npm automation token with publish permission)

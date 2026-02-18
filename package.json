@@ -1,10 +1,30 @@
 {
-  "name": "pi-notify-desktop",
+  "name": "@rbright/pi-notify-desktop",
   "version": "0.1.0",
   "description": "OSC desktop notifications for Pi agent turn completion.",
   "type": "module",
   "license": "MIT",
   "author": "Ryan Bright <ryan@moonriselabs.ai>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbright/pi-notify-desktop.git"
+  },
+  "homepage": "https://github.com/rbright/pi-notify-desktop#readme",
+  "bugs": {
+    "url": "https://github.com/rbright/pi-notify-desktop/issues"
+  },
+  "files": [
+    "src/index.ts",
+    "src/config.ts",
+    "src/notify.ts",
+    "src/protocol.ts",
+    "src/sanitize.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "pi-package",
     "pi",
@@ -20,6 +40,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "check": "bun run lint && bun run typecheck && bun run test",
+    "prepublishOnly": "bun run check",
     "precommit:install": "prek install",
     "precommit:run": "prek run --all-files"
   },
