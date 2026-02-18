@@ -6,25 +6,25 @@
 
 npm package: `@rbright/pi-notify-desktop`
 
-## Install into Pi (GitHub)
+## Install into Pi (npm, recommended)
 
 Global install:
 
 ```bash
-pi install git:github.com/rbright/pi-notify-desktop
+pi install npm:@rbright/pi-notify-desktop
 ```
 
 Project-local install (writes to `.pi/settings.json` in the current repo):
 
 ```bash
-pi install -l git:github.com/rbright/pi-notify-desktop
+pi install -l npm:@rbright/pi-notify-desktop
 ```
 
-After publishing to npm, you can also install from npm:
+Git install (optional fallback):
 
 ```bash
-pi install npm:@rbright/pi-notify-desktop
-pi install -l npm:@rbright/pi-notify-desktop
+pi install git:github.com/rbright/pi-notify-desktop
+pi install -l git:github.com/rbright/pi-notify-desktop
 ```
 
 If Pi is already running, reload extensions:
@@ -107,4 +107,4 @@ Automated publish is available via GitHub Actions (`.github/workflows/publish.ym
 - tag pushes matching `v*`
 
 Required repository secret:
-- `NPM_TOKEN` (npm automation token with publish permission)
+- `NPM_TOKEN` (npm token with publish permission)
